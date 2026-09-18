@@ -1,0 +1,83 @@
+{
+  "project": "My Never Ending Story",
+  "prototype": {
+    "id": "forage-test-01",
+    "purpose": "Test the first encounter and the basic forage loop before implementing the full corpus.",
+    "startingEncounter": "IMAGE_12"
+  },
+  "encounters": {
+    "IMAGE_12": {
+      "type": "image",
+      "story": null,
+      "description": "Classical/ruined waterfront structure with warm gold light, columns, red curtains, calm water, and a circular object at left.",
+      "connections": [
+        "CONN_012C"
+      ]
+    },
+    "C.old-muses": {
+      "type": "passage",
+      "story": "C",
+      "anchor": "C.old-muses",
+      "passageRange": "C.p89–C.p101",
+      "connections": []
+    }
+  },
+  "connections": {
+    "CONN_012C": {
+      "from": "IMAGE_12",
+      "to": "C.old-muses",
+      "type": [
+        "thematic",
+        "associative"
+      ],
+      "reason": "A ruined structure can be encountered as something whose origin has disappeared while the thing itself remains.",
+      "status": "accepted",
+      "provenance": {
+        "proposedBy": "AI",
+        "selectedBy": "human"
+      }
+    }
+  },
+  "trail": {
+    "enabled": true,
+    "initial": [
+      "IMAGE_12"
+    ],
+    "recordsEncounters": true
+  },
+  "interface": {
+    "navigationMode": "forage",
+    "scrolling": false,
+    "startingEncounter": "IMAGE_12",
+    "firstEncounter": {
+      "content": "image",
+      "showTitle": false,
+      "showInstructions": false,
+      "showPrompt": false
+    },
+    "connectionDiscovery": {
+      "mode": "peripheral",
+      "showAsList": false,
+      "requiresExploration": true
+    },
+    "transitions": {
+      "mode": "spatial-shift",
+      "fade": true,
+      "preservePreviousEncounterDuringTransition": true
+    },
+    "backNavigation": true,
+    "pathMemory": true,
+    "endpointBehavior": "return-or-forage",
+    "visualTreatment": {
+      "negativeSpace": "generous",
+      "imageScale": "large",
+      "typography": "quiet",
+      "controls": "minimal",
+      "animation": "restrained"
+    }
+  },
+  "testState": {
+    "nextDestinationFrom_C.old-muses": null,
+    "note": "Deliberately unresolved for the first interface test; do not invent a destination until the first encounter behavior is tested."
+  }
+}
